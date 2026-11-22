@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-legislators-75c362940e', SHELL = ["/legislators/assets/site.css?v=9cff45ef36", "/legislators/assets/site.js?v=38b96724e9", "/legislators/icons/logo-light.webp", "/legislators/icons/logo-dark.webp"];
+const CACHE = 'syg-m-legislators-581ccef9e8', SHELL = ["/legislators/assets/site.css?v=d60c1f9d8f", "/legislators/assets/site.js?v=38b96724e9", "/legislators/icons/logo-light.webp", "/legislators/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-legislators-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
