@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-schools-581ccef9e8', SHELL = ["/schools/assets/site.css?v=d60c1f9d8f", "/schools/assets/site.js?v=38b96724e9", "/schools/icons/logo-light.webp", "/schools/icons/logo-dark.webp"];
+const CACHE = 'syg-m-schools-82edbd176f', SHELL = ["/schools/assets/site.css?v=36eb89c45d", "/schools/assets/site.js?v=9977d20129", "/schools/icons/logo-light.webp", "/schools/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-schools-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
